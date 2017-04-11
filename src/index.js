@@ -7,14 +7,12 @@ import './index.css';
 
 import { BrowserRouter, Route } from 'react-router-dom'
 
-import '../node_modules/semantic-ui/dist/semantic.min.css';
+// import '../node_modules/semantic-ui/dist/semantic.min.css';
 
 
 ReactDOM.render(
   <BrowserRouter>
     <div>
-      <Route exact path="/" component={Newsletters}/>
-      <Route path="/newsletters" component={Newsletters}/>
       <Route path="/newsletters/:id" component={Newsletter}/>
     </div>
 

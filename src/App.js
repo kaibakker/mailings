@@ -10,17 +10,41 @@ import React, { Component } from 'react';
 
 var xhr = new XMLHttpRequest();
 
+var url = 'http://blueberry-custard-97689.herokuapp.com'
+// var url = 'http://localhost:3000'
+
 class App extends Component {
-  componentDidMount() {
-    xhr.open("GET", "https://blueberry-custard-97689.herokuapp.com/api/newsletters/?from_email=" + this.props.params.email, false);
+  constructor(props) {
+    super(props);
+    // this.state = { mailings: [] }
+
+    xhr.open("GET", url + "/api/newsletters", false);
     xhr.send();
 
-    this.setState({ newsletters: JSON.parse(xhr.responseText) })
+    // this.setState({ newsletters: JSON.parse(xhr.responseText) })
+    this.state = { newsletters: JSON.parse(xhr.responseText) }
   }
   render() {
-    return (
-      <div>snor</div>
-    )
+    if(this.state.newsletters) {
+      return <div>
+        { this.state.newsletters.map(function(mailing, index) {
+          return (
+            <div className="event" key={ index }>
+              <div className="content">
+                <a href={ "/newsletters/" + mailing._id }>
+                  <div className="summary">{ mailing.subject }</div>
+                  <div className="date">1 day ago</div>
+                </a>
+              </div>
+            </div>
+          )
+        }) }
+      </div>
+    } else {
+      return (
+        <div>no newsletter</div>
+      )
+    }
   }
 }
 
