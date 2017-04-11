@@ -31,7 +31,7 @@ class App extends Component {
           return (
             <div className="event" key={ index }>
               <div className="content">
-                <a href={ "/newsletters/" + mailing._id }>
+                <a href={ "/#/newsletters/" + mailing._id }>
                   <div className="summary">{ mailing.subject }</div>
                   <div className="date">1 day ago</div>
                 </a>

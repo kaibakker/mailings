@@ -2,20 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Newsletter from './Newsletter';
 
-import Newsletters from './App';
+import App from './App';
 import './index.css';
 
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, HashRouter } from 'react-router-dom'
 
-// import '../node_modules/semantic-ui/dist/semantic.min.css';
+// import '../public/semantic/semantic.min.css';
 
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <div>
+      <Route path="/" component={App}/>
       <Route path="/newsletters/:id" component={Newsletter}/>
     </div>
 
-  </BrowserRouter> ,
+  </HashRouter> ,
   document.getElementById('root')
 );

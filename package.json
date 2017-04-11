@@ -2,7 +2,7 @@
   "name": "subscriptionless",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://kaibakker.github.io/mailings",
+  "homepage": "http://mailings.subscriptionless.com",
   "dependencies": {
     "react": "^15.5.3",
     "react-dom": "^15.5.3",
